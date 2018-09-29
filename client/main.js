@@ -21,7 +21,6 @@ Template.body.onCreated(function() {
                     src: doc.src
                 });
                 if (registerTime[id]) {
-                    console.log(registerTime);
                     if (registerTime[id] <= doc.registeredat) {
                         sounds[id].play();
                         registerTime[id] = doc.registeredat;

@@ -6,4 +6,6 @@ Meteor.startup(() => {});
 Meteor.publish('applause', () => Applause.find());
 
 const Api = new Restivus();
-Api.addCollection(Applause);
+Api.addCollection(Applause, {
+    path: 'sounds'
+});
