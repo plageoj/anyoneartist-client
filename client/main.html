@@ -1,0 +1,38 @@
+<head>
+    <meta charset="utf-8">
+    <title>だれでもアーティスト</title>
+    <meta name="viewport" content="initial-scale=1,width=device-width">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+</head>
+
+<body>
+    <ons-nav var="nav">
+        <ons-page>
+            <ons-toolbar>
+                <div class="center">
+                    だれでもアーティスト
+                </div>
+            </ons-toolbar>
+            <ons-list>
+                <ons-list-item>
+                    <div class="left">ステータス:</div>
+                    <div class="center">{{status}}</div>
+                </ons-list-item>
+                <ons-list-header>
+                    登録済みの歓声 / タップして再生
+                </ons-list-header>
+                {{#each i in applause}}
+                <ons-list-item class="play" id="{{valueOf i._id}}" tappable>
+                    {{i.title}}
+                </ons-list-item>
+                {{else}}
+                <ons-list-item>
+                    歓声は登録されていません
+                </ons-list-item>
+                {{/each}}
+            </ons-list>
+        </ons-page>
+    </ons-nav>
+</body>
