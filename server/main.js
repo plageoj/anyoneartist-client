@@ -9,3 +9,8 @@ const Api = new Restivus();
 Api.addCollection(Applause, {
     path: 'sounds'
 });
+Api.addRoute('intent', {}, {
+    post: function() {
+        console.log(this.bodyParams);
+    }
+});
