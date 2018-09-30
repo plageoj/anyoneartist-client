@@ -22,7 +22,9 @@ Template.body.onCreated(function() {
                 });
                 if (registerTime[id]) {
                     if (registerTime[id] <= doc.registeredat) {
-                        sounds[id].play();
+                        setTimeout(function() {
+                            sounds[id].play();
+                        }, Math.random() * 1500);
                         registerTime[id] = doc.registeredat;
                     }
                 } else {

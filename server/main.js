@@ -6,7 +6,10 @@ Meteor.startup(() => {});
 Meteor.publish('applause', () => Applause.find());
 
 const Api = new Restivus({
-    enableCors: true
+    enableCors: true,
+    defaultHeaders: {
+        'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,HEAD'
+    }
 });
 Api.addCollection(Applause, {
     path: 'sounds'
