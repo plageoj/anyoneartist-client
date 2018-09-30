@@ -12,12 +12,14 @@ Api.addCollection(Applause, {
 Api.addRoute('intent/:title', {}, {
     post: function() {
         const title = this.urlParams.title;
+        console.log(title);
         return { updated: Applause.update({ title: title }, { $set: { registeredat: new Date().getTime() } }) };
     }
 });
 
 Meteor.methods({
     play: (id) => {
+        console.log(id);
         Applause.update(id, { $set: { registeredat: new Date().getTime() } });
     }
 });
