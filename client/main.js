@@ -47,6 +47,6 @@ Template.body.helpers({
 Template.body.events({
     'click .play': (e) => {
         const aid = $(e.target).closest('ons-list-item').attr('id');
-        sounds[aid].play();
+        Meteor.call('play', aid);
     }
 });

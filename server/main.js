@@ -15,3 +15,9 @@ Api.addRoute('intent/:title', {}, {
         return { updated: Applause.update({ title: title }, { $set: { registeredat: new Date().getTime() } }) };
     }
 });
+
+Meteor.methods({
+    play: (id) => {
+        Applause.update(id, { $set: { registeredat: new Date().getTime() } });
+    }
+});
