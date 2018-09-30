@@ -21,7 +21,8 @@ Template.body.onCreated(function() {
                     src: doc.src
                 });
                 if (registerTime[id]) {
-                    if (registerTime[id] <= doc.registeredat) {
+                    if (registerTime[id] < doc.registeredat) {
+                        console.log(id);
                         setTimeout(function() {
                             sounds[id].play();
                         }, Math.random() * 1500);
