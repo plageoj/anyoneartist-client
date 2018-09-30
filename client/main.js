@@ -16,7 +16,7 @@ Template.body.onCreated(function() {
         this.autorun(() => {
 
             Applause.find().forEach((doc) => {
-                const id = doc._id.valueOf();
+                const id = doc._id;
                 sounds[id] = new Howl({
                     src: doc.src
                 });
@@ -40,8 +40,7 @@ Template.body.onCreated(function() {
 
 Template.body.helpers({
     status: () => status.get(),
-    applause: () => Applause.find(),
-    valueOf: (oid) => oid.valueOf()
+    applause: () => Applause.find()
 });
 
 Template.body.events({

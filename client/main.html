@@ -24,7 +24,7 @@
                     登録済みの歓声 / タップして再生
                 </ons-list-header>
                 {{#each i in applause}}
-                <ons-list-item class="play" id="{{valueOf i._id}}" tappable modifier="longdivider">
+                <ons-list-item class="play" id="{{i._id}}" tappable modifier="longdivider">
                     {{i.title}}
                 </ons-list-item>
                 {{else}}
